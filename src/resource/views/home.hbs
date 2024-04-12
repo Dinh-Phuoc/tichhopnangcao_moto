@@ -1,0 +1,139 @@
+<section>
+    <div class="main">
+        <div class="container">
+            <h2>SẢN PHẨM NỔI BẬT</h2>
+            <div class="row">
+                {{#each results}}
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{this.image}}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{this.name}}</h5>
+                        <p class="card-text">{{this.description}}</p>
+                        <h5 class="card-title fw-bold">{{this.price}} VND</h5>
+                        <a href="purchase/{{ this._id }}" class="btn btn-primary">Mua</a>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+
+        <div class="bg">
+            <img src="{{this.image}}">
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="main2">
+        <div class="container">
+            <h2 class="fw-bold mt-4">Đồ chơi xe</h2>
+            <div class="row">
+                <div class="col-sm-8">
+                    <div class="row">
+                        {{#each results}}
+                        <div class="card" style="width: 18rem;">
+                            <img class="card-img-top" src="{{this.image}}" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">{{this.name}}</h5>
+                                <p class="card-text">{{this.description}}</p>
+                                <h5 class="card-title fw-bold">{{this.price}} VND</h5>
+                                <a href="purchase/{{ this._id }}" class="btn btn-primary">Mua</a>
+                            </div>
+                        </div>
+                        {{/each}}
+                    </div>
+
+                    <div class="row">
+                        {{#each results}}
+                        <div class="card" style="width: 18rem;">
+                            <img class="card-img-top" src="{{this.image}}" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">{{this.name}}</h5>
+                                <p class="card-text">{{this.description}}</p>
+                                <h5 class="card-title fw-bold">{{this.price}} VND</h5>
+                                <a href="purchase/{{ this._id }}" class="btn btn-primary">Mua</a>
+                            </div>
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <img id="click-here"
+                        src="image/310528127_493058259386104_246918589607030787_n_23f7473d04f848e7859b8d4b78ab0319.webp">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="main3">
+        <div class="container">
+            <h2 class="fw-bold mt-4">Chăm sóc xe</h2>
+            <div class="row">
+                <div class="col-sm-8">
+                    <div class="row">
+                        {{#each results}}
+                        <div class="card" style="width: 18rem;">
+                            <img class="card-img-top" src="{{this.image}}" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">{{this.name}}</h5>
+                                <p class="card-text">{{this.description}}</p>
+                                <h5 class="card-title fw-bold">{{this.price}} VND</h5>
+                                <a href="purchase/{{ this._id }}" class="btn btn-primary">Mua</a>
+                            </div>
+                        </div>
+                        {{/each}}
+                    </div>
+
+                    <div class="row">
+                        {{#each results}}
+                        <div class="card" style="width: 18rem;">
+                            <img class="card-img-top" src="{{this.image}}" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">{{this.name}}</h5>
+                                <p class="card-text">{{this.description}}</p>
+                                <h5 class="card-title fw-bold">{{this.price}} VND</h5>
+                                <a href="purchase/{{ this._id }}" class="btn btn-primary">Mua</a>
+                            </div>
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <img id="click-here"
+                        src="./image/306099973_797658261462930_2954984801704213543_n_260bf3acb5344d9aaac75e9c9e82f43b.webp">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bg">
+        <img src="image/8b22fe35e360483e1171.jpg">
+    </div>
+</section>
+
+<section>
+    <div class="main3">
+        <div class="container">
+            <h2 class="fw-bold mt-3">Ảnh xe đẹp tại Thanh Hậu
+                <span id="logo">Motocare</span>
+            </h2>
+            <hr>
+            <div class="row">
+                {{#each results}}
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{this.image}}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{this.name}}</h5>
+                        <p class="card-text">{{this.description}}</p>
+                        <h5 class="card-title fw-bold">{{this.price}} VND</h5>
+                        <a href="purchase/{{ this._id }}" class="btn btn-primary">Mua</a>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</section>
