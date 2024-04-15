@@ -6,10 +6,10 @@ const Schema = mongoose.Schema;
 const Motos = new Schema(
     {
         name: String,
-        category: String,
-        description: String,
+        type: String,
+        distributed: String,
         price: Number,
-        image: String,
+        img: String,
     },
     { timestamps: true },
 );

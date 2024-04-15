@@ -9,6 +9,15 @@ class PurchaseController {
             res.json({ error: error.message });
         }
     }
+
+    async type(req, res, next) {
+        try {
+            const results = await Products.find({ type: req.query.type }).lean()
+           res.render('purchase/listPurchase', { results })
+        } catch (error) {
+            res.json({ error: error.message });
+        }
+    }    
 }
 
 module.exports = new PurchaseController
