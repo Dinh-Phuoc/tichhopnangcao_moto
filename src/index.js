@@ -52,48 +52,10 @@ app.use(function SortMiddleware(req, res, next) {
   next();
 });
 
-//Template Engine
-// app.engine(
-//   'hbs',
-//   engine({
-//       extname: '.hbs',
-//       helpers: {
-//           sum: (a, b) => a + b,
-//           sortable: (fieldName, sort) => {
-
-//               const sortType = fieldName === sort.collumn ? sort.type : 'default';
-//               const icons = {
-//                   default: 'bi bi-caret-left-fill',
-//                   asc: 'bi bi-sort-down-alt',
-//                   desc: 'bi bi-sort-down',
-//               };
-
-//               const types = {
-//                   default: 'asc',
-//                   asc: 'desc',
-//                   desc: 'asc',
-//               }
-
-//               const icon = icons[sortType];
-//               const type = types[sortType];
-
-//               return `<a href="?_sort&collumn=${fieldName}&type=${type}">
-//                           <i class="${icon}"></i>
-//                       </a>`;
-//           },         
-//       },
-//   }),
-// );
-
 
 app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, 'resource/views' ))
 
-
-//HTTP loger
-//app.use(morgan('combined'))
-
-// Response
 
 // Routes
 route(app)
