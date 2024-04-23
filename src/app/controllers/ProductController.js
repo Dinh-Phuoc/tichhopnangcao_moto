@@ -1,26 +1,27 @@
 const Products = require('../model/Product.js');
+const Account = require('../model/Account.js');
 
 class ProductController {
-    async show(req, res, next) {
-        try {
-            var manga = await Products.findOne({ slug: req.params.slug }).lean();
-            res.render('product/show', { product });
-        } catch (error) {
-            res.json({ error: err.message });
-        }
-    }
+    // async show(req, res, next) {
+    //     try {
+    //         var product = await Products.findOne({ slug: req.params.slug }).lean();
+    //         res.render('product/show', { product });
+    //     } catch (error) {
+    //         res.json({ error: err.message });
+    //     }
+    // }
 
     // [POST] / manga/hdFormAction
     hdFormAction(req, res, next) {
-        switch(req.body.action) {
+        switch (req.body.action) {
             case 'create':
                 res.json(req.body);
                 break;
             case 'delete':
-                Products.delete({ _id: { $in: req.body.mangaIDs} })
+                Products.delete({ _id: { $in: req.body.mangaIDs } })
                     .lean()
                     .then(() => res.redirect('back'))
-                    .catch(next);                   
+                    .catch(next);
                 break;
             default:
                 res.json({ message: 'Action is invalid' });
@@ -29,17 +30,19 @@ class ProductController {
     }
     async create(req, res, next) {
         try {
-            
-            res.render('product/create');
-        } catch (error) {
+            const user = await Account.findOne({ username: req.cookies.sessionId })
+            res.render('product/create', {user});
+        } catch (err) {
             res.json({ error: err.message });
         }
     }
 
     async edit(req, res, next) {
         try {
+            const user = await Account.findOne({ username: req.cookies.sessionId })
+
             const product = await Products.findById({ _id: req.params.id }).lean();
-            res.render('product/edit', { product });
+            res.render('product/edit', { product, user });
         } catch (error) {
             res.json({ error: err.message });
         }
@@ -67,8 +70,10 @@ class ProductController {
 
     async update(req, res, next) {
         try {
+            const user = await Account.findOne({ username: req.cookies.sessionId })
+
             await Products.updateOne({ _id: req.params.id }, req.body).lean();
-            res.redirect('/me/stored/product');
+            res.redirect('/me/stored/product', user);
         } catch (error) {
             res.json({ error: err.message });
         }

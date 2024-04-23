@@ -111,20 +111,20 @@ body {
   width: 100%; }
 
 .btn_main {
-  background-color: black;
-  color: white;
-  width: 100%;
+  background-color: white;
+  color: black;
+  width: 200px;
   padding: 10px;
   border-radius: 10px; }
 
 .btn_main:hover {
-  background-color: white;
+  background-color: #00bc29;
   color: black; }
 
 .btn_shopping {
   background-color: white;
   color: black;
-  width: 100%;
+  width: 200px;
   padding: 10px;
   border-radius: 10px;
   border-color: #0f0f0f;
@@ -187,13 +187,6 @@ body {
   border: 1px;
   width: 40px;
   height: 40px; }
-
-.btn_main {
-  background-color: black;
-  color: white;
-  width: 100%;
-  padding: 10px;
-  border-radius: 10px; }
 
 /* .confirm {
     background-color: #fafafa;
@@ -272,30 +265,6 @@ body {
 
 .main img {
   width: 100%; }
-
-.btn_main {
-  background-color: black;
-  color: white;
-  width: 100%;
-  padding: 10px;
-  border-radius: 10px; }
-
-.btn_main:hover {
-  background-color: white;
-  color: black; }
-
-.btn_shopping {
-  background-color: white;
-  color: black;
-  width: 100%;
-  padding: 10px;
-  border-radius: 10px;
-  border-color: #0f0f0f;
-  margin-top: 10px; }
-
-.btn_shopping:hover {
-  background-color: #ffd000;
-  color: white; }
 
 .footer1 {
   background-color: #343434;
@@ -403,3 +372,33 @@ body {
   padding: 40px;
   width: 100%;
   margin-top: 50px; }
+
+img {
+  width: 200px;
+  height: 220px;
+  object-fit: cover; }
+
+#buy-amount {
+  display: flex; }
+
+#buy-amount button:hover {
+  background-color: #ececec; }
+
+#buy-amount button svg {
+  color: #909090; }
+
+#buy-amount button:hover svg {
+  color: #373737; }
+
+#buy-amount button {
+  width: 30px;
+  height: 30px;
+  outline: none;
+  background: none;
+  border: 1px solid #ececec;
+  cursor: pointer; }
+
+#buy-amount #amount {
+  width: 35px;
+  text-align: center;
+  border: 1px solid #ececec; }

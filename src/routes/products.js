@@ -11,6 +11,6 @@ router.delete('/:id', productController.destroy);
 router.delete('/:id/force', productController.destroyForce);
 router.patch('/:id/restore', productController.restore);
 router.put('/:id', productController.update);
-router.get('/:slug', productController.show);
+
 
 module.exports = router;

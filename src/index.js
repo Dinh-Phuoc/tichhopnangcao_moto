@@ -1,11 +1,12 @@
 // Import Libraries
 const path = require('path')
 const express = require('express')
-const morgan = require('morgan')
-const { engine } = require('express-handlebars')
+//const morgan = require('morgan')
+//const { engine } = require('express-handlebars')
 const methodOverride = require('method-override')
 const route = require('./routes')
 const db = require('./config/db')
+const cookieParser = require('cookie-parser');
 
 //Connect to Database
 db.conn()
@@ -18,6 +19,7 @@ const port = 3000
 
 // Method overriding
 app.use(methodOverride('_method'));
+app.use(cookieParser());
 
 //
 app.use(
@@ -51,40 +53,40 @@ app.use(function SortMiddleware(req, res, next) {
 });
 
 //Template Engine
-app.engine(
-  'hbs',
-  engine({
-      extname: '.hbs',
-      helpers: {
-          sum: (a, b) => a + b,
-          sortable: (fieldName, sort) => {
+// app.engine(
+//   'hbs',
+//   engine({
+//       extname: '.hbs',
+//       helpers: {
+//           sum: (a, b) => a + b,
+//           sortable: (fieldName, sort) => {
 
-              const sortType = fieldName === sort.collumn ? sort.type : 'default';
-              const icons = {
-                  default: 'bi bi-caret-left-fill',
-                  asc: 'bi bi-sort-down-alt',
-                  desc: 'bi bi-sort-down',
-              };
+//               const sortType = fieldName === sort.collumn ? sort.type : 'default';
+//               const icons = {
+//                   default: 'bi bi-caret-left-fill',
+//                   asc: 'bi bi-sort-down-alt',
+//                   desc: 'bi bi-sort-down',
+//               };
 
-              const types = {
-                  default: 'asc',
-                  asc: 'desc',
-                  desc: 'asc',
-              }
+//               const types = {
+//                   default: 'asc',
+//                   asc: 'desc',
+//                   desc: 'asc',
+//               }
 
-              const icon = icons[sortType];
-              const type = types[sortType];
+//               const icon = icons[sortType];
+//               const type = types[sortType];
 
-              return `<a href="?_sort&collumn=${fieldName}&type=${type}">
-                          <i class="${icon}"></i>
-                      </a>`;
-          }
-      },
-  }),
-);
+//               return `<a href="?_sort&collumn=${fieldName}&type=${type}">
+//                           <i class="${icon}"></i>
+//                       </a>`;
+//           },         
+//       },
+//   }),
+// );
 
 
-app.set('view engine', 'hbs')
+app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, 'resource/views' ))
 
 
